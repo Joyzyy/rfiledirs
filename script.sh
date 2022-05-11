@@ -24,7 +24,7 @@ recursiv() {
         for j in ${!dir[@]}; do
                 cd ${dir[$j]}
                 unset fis
-                sterge_fisier
+                recursiv
                 cd ..
                 if [ ! $(ls -A ${dir[$j]}) ]; then
                         rm -rf ${dir[$j]}
